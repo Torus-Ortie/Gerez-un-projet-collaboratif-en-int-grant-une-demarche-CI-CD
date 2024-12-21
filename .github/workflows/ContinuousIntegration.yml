@@ -60,12 +60,11 @@ jobs:
           git push https://github.com/Torus-Ortie/Gerez-un-projet-collaboratif-en-int-grant-une-demarche-CI-CD.git HEAD:main
 
       - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        with:
-          projectBaseDir: .
-          args: >
-            -Dsonar.projectKey=Torus-Ortie_Gerez-un-projet-collaboratif-en-int-grant-une-demarche-CI-CD
-            -Dsonar.organization=Torus-Ortie
-            -X
+        run: |
+          sonar-scanner \
+            -Dsonar.projectKey=Torus-Ortie/Gerez-un-projet-collaboratif-en-int-grant-une-demarche-CI-CD \
+            -Dsonar.organization=Torus-Ortie \
+            -Dsonar.host.url=https://sonarcloud.io \
+            -Dsonar.login=${{ secrets.SONAR_TOKEN }}
