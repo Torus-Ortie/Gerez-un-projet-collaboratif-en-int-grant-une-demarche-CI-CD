@@ -66,6 +66,6 @@ jobs:
         with:
           projectBaseDir: .
           args: >
-            -Dsonar.projectKey=torus-ortie_Gerez-un-projet-collaboratif-en-int-grant-une-demarche-CI-CD
-            -Dsonar.organization=torus-ortie
+            -Dsonar.projectKey=Torus-Ortie_Gerez-un-projet-collaboratif-en-int-grant-une-demarche-CI-CD
+            -Dsonar.organization=Torus-Ortie
             -X
