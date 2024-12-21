@@ -58,3 +58,14 @@ jobs:
           git add -f ./back/target/site/jacoco/index.html
           git commit -m "Add coverage reports [skip ci]"
           git push https://github.com/Torus-Ortie/Gerez-un-projet-collaboratif-en-int-grant-une-demarche-CI-CD.git HEAD:main
+
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          projectBaseDir: .
+          args: >
+            -Dsonar.projectKey=Torus-Ortie_Gerez-un-projet-collaboratif-en-int-grant-une-demarche-CI-CD
+            -Dsonar.organization=Torus-Ortie
+            -X
