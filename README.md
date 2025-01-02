@@ -1,4 +1,4 @@
-# BobApp readme
+# BobApp
 
 Clone project:
 
